@@ -18,7 +18,8 @@ const allowedOrigins = [
     "http://localhost:5174",
     "http://localhost:5175",
     "https://spireeta.com",
-    "https://www.spireeta.com"
+    "https://www.spireeta.com",
+    "https://spirteea.vercel.app"
 ];
 
 // CORS Middleware – allow any localhost/127.0.0.1 origin in development

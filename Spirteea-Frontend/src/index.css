@@ -1,0 +1,130 @@
+.bg-slider {
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/_next/static/media/slider-bg-vision.b2b984e5.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Value Card Hover Effect */
+.value-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-top: 5px solid #05DAC3;
+    border-left: 5px solid #05DAC3;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translate(-10px, -10px);
+    z-index: 10;
+}
+
+.value-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-bottom: 5px solid #FFB038;
+    border-right: 5px solid #FFB038;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: translate(10px, 10px);
+    z-index: 10;
+}
+
+.value-card:hover::before {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.value-card:hover::after {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.value-card .floating-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    color: #05DAC3;
+    font-size: 1.2rem;
+}
+
+/* Breadcrumb Brush Title */
+.breadcrumb-title {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    z-index: 1;
+}
+
+.breadcrumb-brush {
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+    right: 20px;
+    height: 6px;
+    background: linear-gradient(90deg, #FFB038, #FFD700, #b2fef6);
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.breadcrumb-list a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.breadcrumb-list a:hover {
+    opacity: 0.7;
+}
+
+.breadcrumb-list .separator {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tp-header-2-area {
+  position: sticky !important;
+  top: 0;
+  z-index: 9999;
+}

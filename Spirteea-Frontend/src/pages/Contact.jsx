@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import parse from 'html-react-parser';
-import { getParserOptions } from '../utils/parserOptions';
+import { useParserOptions } from '../utils/parserOptions';
 import { createGeneralEnquiry } from '../api';
 
 const htmlContent = `
@@ -8,10 +8,9 @@ const htmlContent = `
 `;
 
 function Contact() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
   const containerRef = useRef(null);
-  const options = getParserOptions(setIsMenuOpen, isMenuOpen);
+  const options = useParserOptions();
 
   useEffect(() => {
     const ref = { form: null, handler: null };

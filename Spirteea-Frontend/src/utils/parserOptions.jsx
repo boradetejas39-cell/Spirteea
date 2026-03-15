@@ -1,5 +1,6 @@
 import React from 'react';
 import { domToReact } from 'html-react-parser';
+import { useMenu } from '../context/MenuContext';
 
 // Utility to convert style string to object
 const styleToObject = (styleString) => {
@@ -9,7 +10,7 @@ const styleToObject = (styleString) => {
     if (key && value) {
       // Convert kebab-case to camelCase
       const camelKey = key.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
-      // Normalize paths starting with ../assets/ to /assets/
+      // Normalize paths
       const normalizedValue = value.replace(/url\(['"]?\.\.\/assets\//, "url('/assets/").replace(/url\(['"]?assets\//, "url('/assets/");
       acc[camelKey] = normalizedValue;
     }
@@ -17,7 +18,9 @@ const styleToObject = (styleString) => {
   }, {});
 };
 
-export const getParserOptions = (setIsMenuOpen, isMenuOpen, extraOptions = {}) => {
+export const useParserOptions = (extraOptions = {}) => {
+  const { isMenuOpen, setIsMenuOpen } = useMenu();
+
   const options = {
     replace: (domNode) => {
       // React expects className, not class
@@ -33,13 +36,13 @@ export const getParserOptions = (setIsMenuOpen, isMenuOpen, extraOptions = {}) =
       }
 
       // Handle Hamburger Button
-      if (domNode.attribs && domNode.attribs.class && domNode.attribs.class.includes('offcanvas-open-btn')) {
+      if (domNode.attribs && domNode.attribs.className && domNode.attribs.className.includes('offcanvas-open-btn')) {
         const originalStyle = styleToObject(domNode.attribs.style);
         return (
           <div 
             {...domNode.attribs} 
             onClick={() => setIsMenuOpen(true)} 
-            style={{ ...originalStyle, cursor: 'pointer', color: 'white' }}
+            style={{ ...originalStyle, cursor: 'pointer' }}
           >
             {domToReact(domNode.children, options)}
           </div>
@@ -47,22 +50,52 @@ export const getParserOptions = (setIsMenuOpen, isMenuOpen, extraOptions = {}) =
       }
 
       // Handle Sidebar
-      if (domNode.attribs && domNode.attribs.class && domNode.attribs.class.includes('sidebar')) {
-        const currentClass = domNode.attribs.class;
+      if (domNode.attribs && domNode.attribs.className && domNode.attribs.className.includes('sidebar')) {
+        const currentClass = domNode.attribs.className;
         const originalStyle = styleToObject(domNode.attribs.style);
         return (
-          <div 
-            {...domNode.attribs} 
-            className={`${currentClass} ${isMenuOpen ? 'open' : ''}`}
-            style={originalStyle}
-          >
-            {domToReact(domNode.children, options)}
-          </div>
+          <>
+            <div 
+              className={`sidebar-overlay ${isMenuOpen ? 'visible' : ''}`} 
+              onClick={() => setIsMenuOpen(false)}
+            />
+            <div 
+              {...domNode.attribs} 
+              className={`${currentClass} ${isMenuOpen ? 'open' : ''}`}
+              style={originalStyle}
+            >
+              {domToReact(domNode.children, options)}
+            </div>
+          </>
         );
       }
 
+      // Handle Sidebar List Items (add staggered animation delay)
+      const isInsideSidebar = (node) => {
+        let current = node;
+        while (current) {
+          if (current.attribs && current.attribs.className && current.attribs.className.includes('sidebar')) {
+            return true;
+          }
+          current = current.parent;
+        }
+        return false;
+      };
+
+      if (domNode.name === 'li' && isInsideSidebar(domNode)) {
+        const listItems = domNode.parent.children.filter(child => child.name === 'li');
+        const index = listItems.indexOf(domNode);
+        const originalStyle = styleToObject(domNode.attribs.style);
+        return (
+          <li {...domNode.attribs} style={{ ...originalStyle, '--delay': index }}>
+            {domToReact(domNode.children, options)}
+          </li>
+        );
+      }
+
+
       // Handle Close Button in Sidebar
-      if (domNode.attribs && domNode.attribs.class && domNode.attribs.class.includes('close-btn')) {
+      if (domNode.attribs && domNode.attribs.className && domNode.attribs.className.includes('close-btn')) {
         return (
           <button 
             {...domNode.attribs} 
@@ -76,3 +109,11 @@ export const getParserOptions = (setIsMenuOpen, isMenuOpen, extraOptions = {}) =
   };
   return options;
 };
+
+// Keep getParserOptions for backward compatibility if needed, but it should be replaced
+export const getParserOptions = (setIsMenuOpen, isMenuOpen, extraOptions = {}) => {
+  // This is now a wrapper that might not work as expected if called as a normal function 
+  // because useMenu is a hook. But since we are refactoring, we should update callers.
+  return null; 
+};
+

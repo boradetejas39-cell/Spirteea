@@ -43,6 +43,113 @@
     z-index: 10;
 }
 
+/* Mobile Sidebar Styles matched to live site */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Default hidden */
+    width: 300px;
+    height: 100vh;
+    background-color: #f8f9fa; /* Off-white background */
+    z-index: 10000;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -15px 0 35px rgba(34, 212, 230, 0.2), 15px 0 35px rgba(34, 212, 230, 0.2); /* Blueish glow */
+    border-left: 1px solid rgba(34, 212, 230, 0.1);
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar .close-btn {
+    align-self: flex-start;
+    margin: 25px 0 0 30px;
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 2rem;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .close-btn:hover {
+    transform: scale(1.1);
+    color: #05DAC3;
+}
+
+.sidebar nav {
+    margin-top: 50px;
+    padding: 0 40px;
+}
+
+.sidebar nav ul {
+    list-style: disc; /* Bullet points as seen in live site */
+    padding-left: 20px;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+    color: #666; /* Bullet color */
+    transform: translateX(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    transition-delay: calc(0.08s * var(--delay));
+}
+
+.sidebar.open nav ul li {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sidebar nav ul li a {
+    color: #444;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 5px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar nav ul li a:hover {
+    color: #05DAC3;
+    transform: translateX(5px);
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.sidebar-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 80%; /* Takes most of the screen on mobile */
+    }
+}
+
 .value-card:hover::before {
     opacity: 1;
     transform: translate(0, 0);
@@ -124,7 +231,7 @@
 }
 
 .tp-header-2-area {
-  position: sticky !important;
-  top: 0;
-  z-index: 9999;
+    position: sticky !important;
+    top: 0;
+    z-index: 9999;
 }

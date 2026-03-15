@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import parse from 'html-react-parser';
-import { getParserOptions } from '../utils/parserOptions';
+import { useParserOptions } from '../utils/parserOptions';
 import { createEnquiry } from '../api';
 
 const htmlContent = `
@@ -8,8 +8,7 @@ const htmlContent = `
 `;
 
 function Empowerment() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const options = getParserOptions(setIsMenuOpen, isMenuOpen);
+  const options = useParserOptions();
   const ref = useRef({ form: null, handler: null });
 
   useEffect(() => {

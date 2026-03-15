@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import parse from 'html-react-parser';
 import { headerHtml, footerHtml } from '../components/SharedLayout';
 import { useInView } from 'framer-motion';
-import { getParserOptions } from '../utils/parserOptions';
+import { useParserOptions } from '../utils/parserOptions';
 
 function CounterItem({ end, suffix, label, duration = 2 }) {
   const [count, setCount] = useState(0);
@@ -43,8 +43,7 @@ function CounterItem({ end, suffix, label, duration = 2 }) {
 }
 
 function About() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const options = getParserOptions(setIsMenuOpen, isMenuOpen);
+  const options = useParserOptions();
 
   const counters = [
     { end: 10, suffix: '+', label: 'Year Experience' },

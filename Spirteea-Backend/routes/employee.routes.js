@@ -29,7 +29,8 @@ const {
     getEmployeebyid,
     getEmployees,
     permanentDeleteEmployee,
-    updateEmployee
+    updateEmployee,
+    restoreEmployee
 } = require("../controllers/employee.controller.js");
 
 const router = express.Router();
@@ -41,5 +42,6 @@ router.get('/getEmployeebyid/:id', authenticate, getEmployeebyid);
 router.put('/updateEmployee/:id', authenticate, updateEmployee);
 router.post('/softDeleteEmployee', authenticate, deleteEmployee);
 router.post('/permanentDeleteEmployee', authenticate, permanentDeleteEmployee);
+router.post('/restoreEmployee', authenticate, restoreEmployee);
 
 module.exports = router;

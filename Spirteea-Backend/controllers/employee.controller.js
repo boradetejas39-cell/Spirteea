@@ -303,3 +303,18 @@ exports.permanentDeleteEmployee = async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 };
+
+// Restore deleted employees
+exports.restoreEmployee = async (req, res) => {
+    try {
+        const { ids } = req.body;
+        if (!ids || !Array.isArray(ids) || ids.length === 0) {
+            return res.status(400).json({ message: "Invalid or missing IDs" });
+        }
+        await Employee.updateMany({ _id: { $in: ids } }, { $set: { deletedAt: null } });
+        res.status(200).json({ message: "Employees restored successfully" });
+    } catch (error) {
+        console.error("Error restoring employees:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+};

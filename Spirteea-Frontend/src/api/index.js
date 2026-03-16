@@ -68,6 +68,7 @@ export const getEmployeebyid = (id) => request(`/getEmployeebyid/${id}`);
 export const updateEmployee = (id, body) => request(`/updateEmployee/${id}`, { method: 'PUT', body });
 export const softDeleteEmployee = (body) => request('/softDeleteEmployee', { method: 'POST', body: { ids: body.ids } });
 export const permanentDeleteEmployee = (body) => request('/permanentDeleteEmployee', { method: 'POST', body: { ids: body.ids } });
+export const restoreEmployee = (body) => request('/restoreEmployee', { method: 'POST', body: { ids: body.ids } });
 
 // —— General Enquiry (contact form) ——
 export const createGeneralEnquiry = (body) =>
@@ -81,3 +82,14 @@ export const createGeneralEnquiry = (body) =>
       message: body.message,
     },
   });
+export const getGeneralEnquiry = () => request('/getGeneralEnquiry');
+export const getDeletedGeneralEnquiry = () => request('/getDeletedGeneralEnquiry');
+export const softDeleteGeneralEnquiry = (body) => request('/softDeleteGeneralEnquiry', { method: 'POST', body: { ids: body.ids } });
+export const restoreGeneralEnquiry = (body) => request('/restoreGeneralEnquiry', { method: 'POST', body: { ids: body.ids } });
+export const permanentDeleteGeneralEnquiry = (body) => request('/permanentDeleteGeneralEnquiry', { method: 'POST', body: { ids: body.ids } });
+
+export const getResumeEnquiry = () => request('/getResumeEnquiry');
+export const getDeletedResumeEnquiry = () => request('/getDeletedResumeEnquiry');
+export const softDeleteResumeEnquiry = (body) => request('/softDeleteResumeEnquiry', { method: 'POST', body: { ids: body.ids } });
+export const restoreResumeEnquiry = (body) => request('/restoreResumeEnquiry', { method: 'POST', body: { ids: body.ids } });
+export const permanentDeleteResumeEnquiry = (body) => request('/permanentDeleteResumeEnquiry', { method: 'POST', body: { ids: body.ids } });

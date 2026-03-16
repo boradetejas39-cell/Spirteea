@@ -105,9 +105,64 @@ export const useParserOptions = (extraOptions = {}) => {
           </button>
         );
       }
+
+      // Handle Enquiry Modal Form
+      if (domNode.name === 'form' && domNode.attribs && domNode.attribs.className && domNode.attribs.className.includes('form-login')) {
+        return <EnquiryModalForm {...domNode.attribs} />;
+      }
     }
   };
   return options;
+};
+
+// Component to handle the Enquiry Modal Form submission
+const EnquiryModalForm = (props) => {
+  const [loading, setLoading] = React.useState(false);
+  const [message, setMessage] = React.useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage('');
+
+    const formData = new FormData(e.target);
+    const payload = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      serviceType: 'Modal Enquiry',
+      message: 'General enquiry from header modal'
+    };
+
+    try {
+      const { createGeneralEnquiry } = await import('../api');
+      await createGeneralEnquiry(payload);
+      setMessage('Thank you! We will contact you soon.');
+      e.target.reset();
+    } catch (err) {
+      setMessage('Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <form {...props} onSubmit={handleSubmit}>
+      <div className="textfield">
+        <input className="form-control" type="text" name="name" placeholder="Full Name" required />
+      </div>
+      <div className="textfield">
+        <input className="form-control" type="email" name="email" placeholder="Email ID" required />
+      </div>
+      <div className="textfield">
+        <input className="form-control" type="tel" name="phone" placeholder="Phone No" required />
+      </div>
+      <button className="btnlogin" type="submit" disabled={loading}>
+        {loading ? 'Submitting...' : 'Submit'}
+      </button>
+      {message && <p style={{ marginTop: '10px', color: message.includes('Thank') ? '#10b1ba' : 'red' }}>{message}</p>}
+    </form>
+  );
 };
 
 // Keep getParserOptions for backward compatibility if needed, but it should be replaced

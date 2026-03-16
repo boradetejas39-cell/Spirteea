@@ -44,6 +44,11 @@ app.use(express.json());
 app.use("/api", router);
 
 const PORT = process.env.PORT || 6000;
+
+// Temporary defaults so it works locally even without full .env setup
+process.env.INITIAL_ADMIN_EMAIL = process.env.INITIAL_ADMIN_EMAIL || "admin@spireeta.com";
+process.env.INITIAL_ADMIN_PASSWORD = process.env.INITIAL_ADMIN_PASSWORD || "admin6667";
+
 const uri = process.env.ATLAS_URI;
 
 if (!uri) {

@@ -25,6 +25,7 @@ const superAdminRoutes = require("./superAdmin.routes.js");
 const studentRoutes = require("./student.routes.js");
 const employeeRoutes = require("./employee.routes.js");
 const generalEnquiryRoutes = require("./generalEnq.routes.js");
+const resumeRoutes = require("./resume.routes.js");
 // const authenticate = require("../middleware/authenticate");
 
 const router = express.Router();
@@ -48,5 +49,6 @@ router.use("/", studentRoutes);
 router.use("/", enquiryRoutes);
 router.use("/", employeeRoutes);
 router.use("/", generalEnquiryRoutes);
+router.use("/", resumeRoutes);
 
 module.exports = router;

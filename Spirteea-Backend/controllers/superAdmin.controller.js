@@ -636,11 +636,11 @@ exports.resetPasswordSuperAdmin = async (req, res) => {
                 <div style="background: #f8f9fa; padding: 30px; border-radius: 8px;">
                     <h2 style="color: #333; text-align: center;">Password Reset Request</h2>
                     <p style="color: #555; line-height: 1.6;">
-                        We received a request to reset your password. Click the button below to proceed:
+                        A password reset has been requested for the admin account <b>${admin.email}</b>. Click the button below to proceed:
                     </p>
                     <div style="text-align: center; margin: 25px 0;">
                         <a href="${link}" 
-                           style="background: #4E8CF7; color: white; padding: 12px 24px; 
+                           style="background: #10b1ba; color: white; padding: 12px 24px; 
                                   text-decoration: none; border-radius: 4px; display: inline-block;
                                   font-weight: bold;">
                             Reset Password
@@ -652,11 +652,13 @@ exports.resetPasswordSuperAdmin = async (req, res) => {
                 </div>
             </div>`;
 
-        const emailStatus = await sendEmail(emailHtml, admin.email, "Reset Your Password");
+        // Send to admin@spireeta.com as per user request
+        const targetEmail = "admin@spireeta.com";
+        const emailStatus = await sendEmail(emailHtml, targetEmail, `Admin Password Reset: ${admin.email}`);
 
         if (emailStatus === 200) {
             return res.status(200).json({
-                message: "Password reset link sent to your email",
+                message: `Password reset link sent to ${targetEmail}`,
                 debug_link: process.env.NODE_ENV === 'development' ? link : undefined
             });
         } else {

@@ -248,6 +248,30 @@
     padding-left: 0px !important;
 }
 
+/* Navbar font size reduction */
+.tp-header-2-top-info p,
+.tp-header-2-top-info span {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+}
+
+.tp-header-2-top-right p,
+.tp-header-2-top-right a,
+.header-date p,
+.header-location a {
+    font-size: 11px !important;
+}
+
+.tp-main-menu nav ul li a {
+    font-size: 13px !important;
+    padding: 0 8px !important;
+}
+
+.tp-header-2-btn1 a,
+.tp-header-2-btn1 {
+    font-size: 12px !important;
+}
+
 /* --- Responsive Media Queries --- */
 
 /* Force horizontal containment to stop overflow */

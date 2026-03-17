@@ -619,10 +619,8 @@ exports.resetPasswordSuperAdmin = async (req, res) => {
             expiresAt: Date.now() + 3600000 // 1 hour
         }).save();
 
-        const baseUrl = process.env.NODE_ENV === 'production'
-            ? process.env.ADMIN_PORTAL_URL
-            : 'http://spireeta.com';
-
+        const baseUrl = process.env.ADMIN_PORTAL_URL || 'http://localhost:5173';
+        
         const link = `${baseUrl.replace(/\/$/, '')}/reset-password/${admin._id}/${resetToken}`;
         console.log(`🔗 Reset password link generated: ${link}`);
 

@@ -57,18 +57,24 @@ function About() {
       {parse(headerHtml, options)}
 
       {/* Hero Banner */}
-      <section className="breadcrumb__area breadcrumb-style pt-60 pb-60 p-relative z-index-1" style={{
+      <section className="breadcrumb__area breadcrumb-style pt-90 pb-90 p-relative z-index-1" style={{
         backgroundImage: 'linear-gradient(90deg, #22D4E6 0%, #1B8D9B 100%)',
-        textAlign: 'center',
-        width: '100%',
-        overflow: 'hidden'
+        textAlign: 'center'
       }}>
         <div className="breadcrumb__bg-overlay m-img"></div>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-10">
               <div className="breadcrumb__content text-center">
-                <h3 className="breadcrumb-title" style={{ fontSize: 'clamp(2rem, 8vw, 3.4rem)' }}>
+                <h3 className="breadcrumb__title" style={{ 
+                  color: '#fff', 
+                  fontSize: '54px', 
+                  fontWeight: 700, 
+                  position: 'relative', 
+                  display: 'inline-block', 
+                  marginBottom: '15px',
+                  textTransform: 'capitalize'
+                }}>
                   Who We Are
                   <img 
                     alt="underline" 
@@ -78,25 +84,32 @@ function About() {
                     src="/_next/static/media/titile.9b6539c6.svg"
                     style={{
                       position: 'absolute',
-                      bottom: '-5px',
+                      bottom: '-10px',
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      width: '70%',
+                      width: '100%',
                       maxWidth: '213px'
                     }}
                   />
                 </h3>
-                <div className="breadcrumb-list" style={{ marginTop: '20px' }}>
+                <div className="breadcrumb__list" style={{ 
+                  color: '#fff', 
+                  fontSize: '16px', 
+                  fontWeight: 400, 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  alignItems: 'center', 
+                  gap: '5px' 
+                }}>
                   <span> <a href="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</a> </span>
-                  <span className="separator"><i className="fa-regular fa-angle-right"></i></span>
-                  <span>About Us</span>
+                  <span className="dvdr" style={{ fontSize: '12px', opacity: 0.8 }}><i className="fa-regular fa-angle-right"></i></span>
+                  <span style={{ color: '#fff' }}>About Us</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
 
       {/* About Section */}
       <section className="tp-business-area p-relative pt-60 pb-100">
@@ -108,8 +121,8 @@ function About() {
                 loading="lazy" 
                 width="1000" 
                 height="563" 
-                className="img-fluid" 
-                style={{ color: 'transparent', borderRadius: '8px' }} 
+                className="img-responsive" 
+                style={{ color: 'transparent', borderRadius: '8px', width: '100%', height: 'auto' }} 
                 src="https://spireeta.com/_next/static/media/about-img.1848c58b.jpg"
               />
             </div>
@@ -124,7 +137,6 @@ function About() {
                 <p>
                   Spirita Technologies (I) Pvt Limited is established to help IT professional to convert their potential to Performance. Spirita believes that every human being has potential but it is unseen most of the time due lack of technical knowledge, lack of training required and lack of team spirit. Spirit believes on core values Team Work, Integrity, Respect Of An individual &amp; Building trust with all stakeholders
                 </p>
-
                 <p style={{ marginTop: '15px' }}>
                   Spirita has its mission to provide cost effective training designed to increase an individual and organizational productivity and enrichment
                 </p>
@@ -187,24 +199,19 @@ function About() {
                 icon: '📋'
               }
             ].map((item, i) => (
-              <div key={i} className="col-lg-4 col-md-6 col-sm-12">
+              <div key={i} className="col-lg-4 col-md-6">
                 <div className="value-card" style={{
                   borderRadius: '12px',
-                  padding: '40px 20px',
+                  padding: '50px 30px 60px',
                   textAlign: 'center',
-                  minHeight: 'auto',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center'
+                  minHeight: '520px',
                 }}>
                   <div style={{
-                    width: 'clamp(140px, 40vw, 180px)', 
-                    height: 'clamp(140px, 40vw, 180px)', 
-                    borderRadius: '50%',
+                    width: '180px', height: '180px', borderRadius: '50%',
                     position: 'relative',
-                    margin: '0 auto 20px',
+                    margin: '0 auto 30px',
                   }}>
-                    <div className="floating-badge" style={{ transform: 'scale(0.8)' }}>
+                    <div className="floating-badge">
                       {item.icon}
                     </div>
                     <div style={{
@@ -216,15 +223,14 @@ function About() {
                       <img src={item.img} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                   </div>
-                  <h4 style={{ fontWeight: 700, marginBottom: '5px', color: '#070f20', fontSize: '1.25rem' }}>{item.title}</h4>
+                  <h4 style={{ fontWeight: 700, marginBottom: '5px', color: '#070f20', fontSize: '1.4rem' }}>{item.title}</h4>
                   <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '15px' }}>
-                    <img src="/_next/static/media/titile.9b6539c6.svg" alt="underline" style={{ width: '80px', height: 'auto' }} />
+                    <img src="/_next/static/media/titile.9b6539c6.svg" alt="underline" style={{ width: '100px', height: 'auto' }} />
                   </div>
-                  <p style={{ color: '#555', lineHeight: '1.6', fontSize: '0.95rem' }}>{item.text}</p>
+                  <p style={{ color: '#555', lineHeight: '1.7' }}>{item.text}</p>
                 </div>
               </div>
             ))}
-
           </div>
         </div>
       </section>

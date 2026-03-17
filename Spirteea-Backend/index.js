@@ -13,6 +13,7 @@ dotenv.config({ path: ".env" });
 
 // Allowed Origins for CORS
 const allowedOrigins = [
+    process.env.FRONTEND_URL, // Allow dynamic frontend URL from .env
     "http://localhost:3000",
     "http://localhost:5173",
     "http://localhost:5174",
@@ -20,7 +21,7 @@ const allowedOrigins = [
     "https://spireeta.com",
     "https://www.spireeta.com",
     "https://spirteea.vercel.app"
-];
+].filter(Boolean); // Remove null/undefined entries
 
 // CORS Middleware – allow any localhost/127.0.0.1 origin in development
 app.use(

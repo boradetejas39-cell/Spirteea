@@ -181,7 +181,7 @@ const SMTP_PORT = parseInt(process.env.SMTP_PORT || "465", 10);
 const SMTP_SECURE = process.env.SMTP_SECURE !== "false";
 const SMTP_USER = process.env.SMTP_USER || "";
 const SMTP_PASS = process.env.SMTP_PASS || "";
-const SMTP_FROM = process.env.SMTP_FROM || '"Spireeta HR" <noreply@localhost>';
+const SMTP_FROM = process.env.SMTP_FROM || '"Spireeta HR" <hr@spireeta.com>';
 
 const transporter = SMTP_HOST && SMTP_USER
   ? nodemailer.createTransport({

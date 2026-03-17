@@ -24,7 +24,7 @@ function AnimatedSlider() {
   }, []);
 
   return (
-    <div className="w-100 d-flex flex-column align-items-center" style={{ position: 'relative', height: 'auto', minHeight: '300px', overflow: 'hidden', padding: '20px 0' }}>
+    <div className="w-100 d-flex flex-column align-items-center" style={{ position: 'relative', height: 'auto', minHeight: '300px', overflow: 'hidden', padding: '20px 0', boxSizing: 'border-box' }}>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -32,20 +32,21 @@ function AnimatedSlider() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          style={{ position: 'absolute', width: '100%', top: 0, left: 0, padding: '0 15px', textAlign: 'center' }}
+          style={{ position: 'absolute', width: '100%', top: 0, left: 0, padding: '0 15px', textAlign: 'center', boxSizing: 'border-box' }}
         >
           <h2 style={{
             color: '#070f20',
             fontWeight: 700,
-            fontSize: 'clamp(1.8rem, 5vw, 2.5rem)',
-            marginBottom: '1rem',
-            fontFamily: 'var(--heading-font)'
+            fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
+            marginBottom: '0.8rem',
+            fontFamily: 'var(--heading-font)',
+            wordBreak: 'break-word'
           }}>
             {slides[currentIndex].title}
           </h2>
           <p style={{
             color: '#333333',
-            fontSize: 'clamp(0.95rem, 3vw, 1.15rem)',
+            fontSize: 'clamp(0.85rem, 3vw, 1.15rem)',
             lineHeight: '1.6',
             margin: '0 auto',
             maxWidth: '100%',

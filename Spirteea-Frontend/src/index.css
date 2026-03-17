@@ -284,9 +284,11 @@
 .tp-header-2-btn1 a,
 .tp-header-2-btn1 {
     font-size: 14px !important;
-    margin-right: 120px !important;
+    margin-right: 15px !important;
     white-space: nowrap !important;
-    /* Shifting left further */
+    padding: 8px 20px !important;
+    display: inline-block !important;
+    border-radius: 30px !important;
 }
 
 /* --- Responsive Media Queries --- */

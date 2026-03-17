@@ -18,6 +18,11 @@ const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:5175",
+    "http://5.161.61.27",
+    "http://5.161.61.27:5173",
+    "http://5.161.61.27:5174",
+    "http://5.161.61.27:5175",
+    "http://5.161.61.27:3000",
     "https://spireeta.com",
     "https://www.spireeta.com",
     "https://spirteea.vercel.app"

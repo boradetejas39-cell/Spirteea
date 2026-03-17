@@ -619,7 +619,7 @@ exports.resetPasswordSuperAdmin = async (req, res) => {
             expiresAt: Date.now() + 3600000 // 1 hour
         }).save();
 
-        const baseUrl = process.env.ADMIN_PORTAL_URL || 'http://localhost:5173';
+        const baseUrl = process.env.ADMIN_PORTAL_URL || 'http://5.161.61.27:5173';
         
         const link = `${baseUrl.replace(/\/$/, '')}/reset-password/${admin._id}/${resetToken}`;
         console.log(`🔗 Reset password link generated: ${link}`);

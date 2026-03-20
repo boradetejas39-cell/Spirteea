@@ -1,5 +1,5 @@
 .bg-slider {
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/_next/static/media/slider-bg-vision.b2b984e5.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/next_assets/static/media/slider-bg-vision.b2b984e5.jpg');
     background-size: cover;
     background-position: center;
 }

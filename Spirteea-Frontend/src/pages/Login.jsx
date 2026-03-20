@@ -246,7 +246,7 @@ const Login = () => {
             <div className="login-card">
                 <div className="login-left-section">
                     <img 
-                        src="https://spireeta.com/assets/img/logo/logo-spirita.jpeg" 
+                        src="/next_assets/static/media/logo-spirita.eb124c62.jpg" 
                         alt="Spirita Logo" 
                         className="login-logo"
                     />
@@ -259,31 +259,37 @@ const Login = () => {
                     
                     <form onSubmit={handleSubmit}>
                         <div className="form-group" style={{ marginTop: '20px' }}>
-                            <label className="form-label">
+                            <label className="form-label" htmlFor="email">
                                 <i className="fa-solid fa-user"></i>
                                 USERNAME/ EMAIL ID
                             </label>
                             <input 
-                                type="text" 
+                                type="email" 
+                                id="email"
+                                name="email"
                                 className="login-input" 
                                 placeholder="Username/ Email ID"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
+                                autoComplete="username"
                                 required
                             />
                         </div>
 
                         <div className="form-group">
-                            <label className="form-label">
+                            <label className="form-label" htmlFor="password">
                                 <i className="fa-solid fa-lock"></i>
                                 PASSWORD
                             </label>
                             <input 
                                 type={showPassword ? "text" : "password"} 
+                                id="password"
+                                name="password"
                                 className="login-input" 
                                 placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
+                                autoComplete="current-password"
                                 required
                             />
                             <button 
@@ -319,3 +325,4 @@ const Login = () => {
 };
 
 export default Login;
+

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { getStudents, softDeleteStudent, resetPasswordSuperAdmin } from '../api';
@@ -61,7 +61,7 @@ const EnrolledStudents = () => {
                         </tbody>
                     </table>
                     <div class="footer">
-                        <p>© Spireeta - Admin Portal</p>
+                        <p>Â© Spireeta - Admin Portal</p>
                     </div>
                     <script>
                         window.onload = function() {
@@ -120,7 +120,7 @@ const EnrolledStudents = () => {
                         </tbody>
                     </table>
 
-                    <div class="footer">© Spireeta - Personalized Report</div>
+                    <div class="footer">Â© Spireeta - Personalized Report</div>
                     <script>window.onload = () => window.print();</script>
                 </body>
             </html>
@@ -742,7 +742,7 @@ const EnrolledStudents = () => {
                 <nav className="top-navbar">
                     <div className="nav-left">
                         <img
-                            src="https://spireeta.com/assets/img/logo/logo-spirita.jpeg"
+                            src="/next_assets/static/media/logo-spirita.eb124c62.jpg"
                             alt="Spirita Logo"
                             className="nav-logo"
                             onClick={() => navigate('/')}
@@ -841,16 +841,16 @@ const EnrolledStudents = () => {
                                                     checked={selectedIds.length > 0 && selectedIds.length === students.filter(item => (item.nameOfTheStudent || '').toLowerCase().includes(searchTerm.toLowerCase())).length}
                                                 />
                                             </th>
-                                            <th>Index <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>Student Name <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>Registration Date <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>Candidate ITP ID <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>Candidate Batch ID <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>Candidate Email ID <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>Phone <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>College Name <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>ITP Project Name <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>ITP completed <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
+                                            <th>Index <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>Student Name <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>Registration Date <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>Candidate ITP ID <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>Candidate Batch ID <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>Candidate Email ID <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>Phone <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>College Name <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>ITP Project Name <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>ITP completed <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -909,11 +909,11 @@ const EnrolledStudents = () => {
                             </div>
 
                             <div className="pagination-footer">
-                                <div className="page-arrow">❮</div>
+                                <div className="page-arrow">â®</div>
                                 <div className="pagination-nav">
                                     <span className="page-number active">1</span>
                                 </div>
-                                <div className="page-arrow">❯</div>
+                                <div className="page-arrow">â¯</div>
                                 <select className="page-size-select">
                                     <option>5 / page</option>
                                     <option>10 / page</option>
@@ -985,3 +985,4 @@ const EnrolledStudents = () => {
 };
 
 export default EnrolledStudents;
+

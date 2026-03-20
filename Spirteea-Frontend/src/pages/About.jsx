@@ -66,22 +66,22 @@ function About() {
           <div className="row justify-content-center">
             <div className="col-xl-10">
               <div className="breadcrumb__content text-center">
-                <h3 className="breadcrumb__title" style={{ 
-                  color: '#fff', 
-                  fontSize: '54px', 
-                  fontWeight: 700, 
-                  position: 'relative', 
-                  display: 'inline-block', 
+                <h3 className="breadcrumb__title" style={{
+                  color: '#fff',
+                  fontSize: '54px',
+                  fontWeight: 700,
+                  position: 'relative',
+                  display: 'inline-block',
                   marginBottom: '15px',
                   textTransform: 'capitalize'
                 }}>
                   Who We Are
-                  <img 
-                    alt="underline" 
-                    loading="lazy" 
-                    width="213" 
-                    height="5" 
-                    src="/_next/static/media/titile.9b6539c6.svg"
+                  <img
+                    alt="underline"
+                    loading="lazy"
+                    width="213"
+                    height="5"
+                    src="/next_assets/static/media/titile.9b6539c6.svg"
                     style={{
                       position: 'absolute',
                       bottom: '-10px',
@@ -92,14 +92,14 @@ function About() {
                     }}
                   />
                 </h3>
-                <div className="breadcrumb__list" style={{ 
-                  color: '#fff', 
-                  fontSize: '16px', 
-                  fontWeight: 400, 
-                  display: 'flex', 
-                  justifyContent: 'center', 
-                  alignItems: 'center', 
-                  gap: '5px' 
+                <div className="breadcrumb__list" style={{
+                  color: '#fff',
+                  fontSize: '16px',
+                  fontWeight: 400,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '5px'
                 }}>
                   <span> <a href="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</a> </span>
                   <span className="dvdr" style={{ fontSize: '12px', opacity: 0.8 }}><i className="fa-regular fa-angle-right"></i></span>
@@ -116,14 +116,14 @@ function About() {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
-              <img 
-                alt="About Spirita" 
-                loading="lazy" 
-                width="1000" 
-                height="563" 
-                className="img-responsive" 
-                style={{ color: 'transparent', borderRadius: '8px', width: '100%', height: 'auto' }} 
-                src="https://spireeta.com/_next/static/media/about-img.1848c58b.jpg"
+              <img
+                alt="About Spirita"
+                loading="lazy"
+                width="1000"
+                height="563"
+                className="img-responsive"
+                style={{ color: 'transparent', borderRadius: '8px', width: '100%', height: 'auto' }}
+                src="/next_assets/static/media/123.jpg"
               />
             </div>
             <div className="col-lg-6">
@@ -151,7 +151,7 @@ function About() {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="tp-counter-box" style={{ backgroundImage: 'url(assets/img/fun-fact/counter-bg.png)' }}>
+              <div className="tp-counter-box" style={{ backgroundImage: 'url(/assets/img/fun-fact/counter-bg.png)' }}>
                 <div className="row">
                   {counters.map((c, i) => (
                     <CounterItem key={i} end={c.end} suffix={c.suffix} label={c.label} />
@@ -183,19 +183,19 @@ function About() {
               {
                 title: 'Our Mission',
                 text: 'Provide quality, cost-effective training designed to increase individual and organizational productivity and enrichment.',
-                img: '_next/static/media/img-1.96831ed1.png',
+                img: '/next_assets/static/media/img-1.96831ed1.png',
                 icon: '📈'
               },
               {
                 title: 'Our Vision',
                 text: "To become one of the world's leading companies, bringing innovations by converting the potential of an individual to performance.",
-                img: '_next/static/media/img-2.d440cce1.png',
+                img: '/next_assets/static/media/img-2.d440cce1.png',
                 icon: '📊'
               },
               {
                 title: 'Core Values',
                 text: 'Integrity, Respect of an individual. Teamwork emphasizes collaboration and the importance of working together towards common goals.',
-                img: '_next/static/media/img-3.1956858b.png',
+                img: '/next_assets/static/media/img-3.1956858b.png',
                 icon: '📋'
               }
             ].map((item, i) => (
@@ -225,7 +225,7 @@ function About() {
                   </div>
                   <h4 style={{ fontWeight: 700, marginBottom: '5px', color: '#070f20', fontSize: '1.4rem' }}>{item.title}</h4>
                   <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '15px' }}>
-                    <img src="/_next/static/media/titile.9b6539c6.svg" alt="underline" style={{ width: '100px', height: 'auto' }} />
+                    <img src="/next_assets/static/media/titile.9b6539c6.svg" alt="underline" style={{ width: '100px', height: 'auto' }} />
                   </div>
                   <p style={{ color: '#555', lineHeight: '1.7' }}>{item.text}</p>
                 </div>

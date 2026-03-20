@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { getEnquiry, getGeneralEnquiry, getResumeEnquiry, softDeleteEnquiry, softDeleteGeneralEnquiry, softDeleteResumeEnquiry, resetPasswordSuperAdmin } from '../api';
@@ -67,7 +67,7 @@ const RegistrationsEnquiry = () => {
                         </tbody>
                     </table>
                     <div class="footer">
-                        <p>© Spireeta - Admin Portal</p>
+                        <p>Â© Spireeta - Admin Portal</p>
                     </div>
                     <script>
                         window.onload = function() {
@@ -139,7 +139,7 @@ const RegistrationsEnquiry = () => {
                             ${detailsHtml}
                         </tbody>
                     </table>
-                    <div class="footer">© Spireeta - Personalized Report</div>
+                    <div class="footer">Â© Spireeta - Personalized Report</div>
                     <script>window.onload = () => window.print();</script>
                 </body>
             </html>
@@ -804,7 +804,7 @@ const RegistrationsEnquiry = () => {
                 <nav className="top-navbar">
                     <div className="nav-left">
                         <img 
-                            src="https://spireeta.com/assets/img/logo/logo-spirita.jpeg" 
+                            src="/next_assets/static/media/logo-spirita.eb124c62.jpg" 
                             alt="Spirita Logo" 
                             className="nav-logo" 
                             onClick={() => navigate('/')}
@@ -906,12 +906,12 @@ const RegistrationsEnquiry = () => {
                                                 />
                                             </th>
                                             <th>Index</th>
-                                            <th>Name <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>College Name <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>Educational Degree <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>Email <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>Phone <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
-                                            <th>Date <div className="sort-icons"><span className="sort-icon">▲</span><span className="sort-icon">▼</span></div></th>
+                                            <th>Name <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>College Name <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>Educational Degree <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>Email <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>Phone <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
+                                            <th>Date <div className="sort-icons"><span className="sort-icon">â–²</span><span className="sort-icon">â–¼</span></div></th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -967,11 +967,11 @@ const RegistrationsEnquiry = () => {
                             </div>
 
                             <div className="pagination-footer">
-                                <div className="page-arrow">❮</div>
+                                <div className="page-arrow">â®</div>
                                 <div className="pagination-nav">
                                     <span className="page-number active">1</span>
                                 </div>
-                                <div className="page-arrow">❯</div>
+                                <div className="page-arrow">â¯</div>
                                 <select className="page-size-select">
                                     <option>5 / page</option>
                                     <option>10 / page</option>
@@ -1046,3 +1046,4 @@ const RegistrationsEnquiry = () => {
 };
 
 export default RegistrationsEnquiry;
+

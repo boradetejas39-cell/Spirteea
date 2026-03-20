@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { resetPasswordSuperAdmin } from '../api';
 
@@ -218,12 +218,12 @@ const ForgotPassword = () => {
             <div className="login-card">
                 <div className="login-left-section">
                     <img 
-                        src="https://spireeta.com/assets/img/logo/logo-spirita.jpeg" 
+                        src="/next_assets/static/media/logo-spirita.eb124c62.jpg" 
                         alt="Spirita Logo" 
                         className="login-logo"
                     />
                     <div className="brand-title">Spirita Technologies (I) Pvt.Ltd.</div>
-                    <div className="brand-tagline">Converting Potential To Performance...™</div>
+                    <div className="brand-tagline">Converting Potential To Performance...â„¢</div>
                 </div>
 
                 <div className="login-right-section">
@@ -271,3 +271,4 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
+

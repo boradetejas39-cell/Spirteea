@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { resetPasswordWithToken } from '../api';
 
@@ -181,7 +181,7 @@ const ResetPassword = () => {
             <div className="login-card">
                 <div className="login-left-section">
                     <img 
-                        src="https://spireeta.com/assets/img/logo/logo-spirita.jpeg" 
+                        src="/next_assets/static/media/logo-spirita.eb124c62.jpg" 
                         alt="Spirita Logo" 
                         className="login-logo"
                     />
@@ -249,3 +249,4 @@ const ResetPassword = () => {
 };
 
 export default ResetPassword;
+

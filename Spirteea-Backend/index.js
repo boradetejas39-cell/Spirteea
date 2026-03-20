@@ -1,15 +1,13 @@
+require("dotenv").config({ path: ".env" });
 
 const express = require("express");
-const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const router = require("./routes/routes.js");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
-require("dotenv").config();
 
 const app = express();
-dotenv.config({ path: ".env" });
 
 // Allowed Origins for CORS
 const allowedOrigins = [
@@ -43,6 +41,20 @@ app.use(
         credentials: true,
     })
 );
+
+// Content Security Policy (CSP) Middleware
+app.use((req, res, next) => {
+    res.setHeader(
+        "Content-Security-Policy",
+        "default-src 'self' http://localhost:5000 http://localhost:5173 https://spireeta.com https://www.spireeta.com http://5.161.61.27:5000; " +
+        "connect-src 'self' http://localhost:5000 http://localhost:5173 https://spireeta.com https://www.spireeta.com http://5.161.61.27:5000; " +
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+        "font-src 'self' https://fonts.gstatic.com; " +
+        "img-src 'self' data: http://localhost:5000 http://5.161.61.27:5000 https://spireeta.com https://www.spireeta.com;"
+    );
+    next();
+});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());

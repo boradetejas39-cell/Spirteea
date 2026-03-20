@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { getEmployees, softDeleteEmployee, createEmployee, resetPasswordSuperAdmin } from '../api';
@@ -78,7 +78,7 @@ const EmployeeRegistrations = () => {
                         </tbody>
                     </table>
                     <div class="footer">
-                        <p>© Spireeta - Admin Portal</p>
+                        <p>Â© Spireeta - Admin Portal</p>
                     </div>
                     <script>
                         window.onload = function() {
@@ -125,7 +125,7 @@ const EmployeeRegistrations = () => {
                             <tr><th>DOJ</th><td>${item.dateOfJoining ? new Date(item.dateOfJoining).toLocaleDateString() : 'N/A'}</td></tr>
                         </tbody>
                     </table>
-                    <div class="footer">© Spireeta - Personalized Employee Report</div>
+                    <div class="footer">Â© Spireeta - Personalized Employee Report</div>
                     <script>window.onload = () => window.print();</script>
                 </body>
             </html>
@@ -852,7 +852,7 @@ const EmployeeRegistrations = () => {
                 <nav className="top-navbar">
                     <div className="nav-left">
                         <img 
-                            src="https://spireeta.com/assets/img/logo/logo-spirita.jpeg" 
+                            src="/next_assets/static/media/logo-spirita.eb124c62.jpg" 
                             alt="Spirita Logo" 
                             className="nav-logo" 
                             onClick={() => navigate('/')}
@@ -1019,11 +1019,11 @@ const EmployeeRegistrations = () => {
                             </div>
 
                             <div className="pagination-footer">
-                                <div className="page-arrow">❮</div>
+                                <div className="page-arrow">â®</div>
                                 <div className="pagination-nav">
                                     <span className="page-number active">1</span>
                                 </div>
-                                <div className="page-arrow">❯</div>
+                                <div className="page-arrow">â¯</div>
                                 <select className="page-size-select">
                                     <option>5 / page</option>
                                     <option>10 / page</option>
@@ -1154,3 +1154,4 @@ const EmployeeRegistrations = () => {
 };
 
 export default EmployeeRegistrations;
+

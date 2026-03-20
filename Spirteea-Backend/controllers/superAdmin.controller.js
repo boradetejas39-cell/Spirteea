@@ -650,8 +650,8 @@ exports.resetPasswordSuperAdmin = async (req, res) => {
                 </div>
             </div>`;
 
-        // Send to admin@spireeta.com as per user request
-        const targetEmail = "admin@spireeta.com";
+        // Send to superAdmin (HR) as per user configuration
+        const targetEmail = process.env.SUPERADMIN_EMAIL || "hr@spireeta.com";
         const emailStatus = await sendEmail(emailHtml, targetEmail, `Admin Password Reset: ${admin.email}`);
 
         if (emailStatus === 200) {
